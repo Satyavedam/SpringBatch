@@ -16,8 +16,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
-import csvtodb.entity.Manager;
-import csvtodb.repository.ManagerRepo;
+import springBatch.example.SpringBatchdemo.entity.Manager;
+import springBatch.example.SpringBatchdemo.repository.ManagerRepo;
+
+
 
 @Configuration
 @EnableBatchProcessing
@@ -53,7 +55,7 @@ public class SpringBatchConfig {
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
         lineTokenizer.setDelimiter(",");
         lineTokenizer.setStrict(false);
-        lineTokenizer.setNames("ManagerId", "ManagerName", "Email");
+        lineTokenizer.setNames("ManagerId","ManagerName","Email");
 
         BeanWrapperFieldSetMapper<Manager> fieldSetMapper = new BeanWrapperFieldSetMapper<>(); // it will map from target class which is employee
         fieldSetMapper.setTargetType(Manager.class);

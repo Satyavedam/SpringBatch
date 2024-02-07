@@ -1,20 +1,18 @@
 package springBatch.example.SpringBatchdemo.config;
 
-import javax.batch.api.chunk.ItemProcessor;
-
+import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
-public class ManagerProcessor {
-	
-	@Component
+import springBatch.example.SpringBatchdemo.entity.Manager;
+
+@Component
 	public class ManagerProcessor implements ItemProcessor<Manager, Manager> {
 
-	    @Override
-	    public Manager process(Manager manager) throws Exception {
-	        return manager;
-	    }
+		@Override
+		public Manager process(Manager manager) throws Exception {
+			return manager;
+		}
 
 	}
 
 
-}
